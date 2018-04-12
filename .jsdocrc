@@ -1,0 +1,7 @@
+{
+  "source": {
+    "includePattern": ".*\\.js(doc)?$",
+    "excludePattern": "node_modules\\/.*"
+  },
+  "sourceType": "module"
+}

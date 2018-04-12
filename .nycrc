@@ -1,0 +1,5 @@
+{
+  "exclude": ["node_modules/"],
+  "reporter": ["lcov", "text-summary"],
+  "report-dir": "./coverage"
+}
