@@ -2,7 +2,7 @@
  * @author Roman Decker
  * Open sourced with permission from innovation.rocks consulting gmbh
  *
- * @module @inr/cafs
+ * @module cafs
  */
 
 'use strict';

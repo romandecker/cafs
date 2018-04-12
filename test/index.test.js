@@ -2,7 +2,6 @@
  * @author Roman Decker
  * Open sourced with permission from innovation.rocks consulting gmbh
  **/
-
 'use strict';
 
 const EventEmitter = require('events');

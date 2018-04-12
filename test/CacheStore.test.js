@@ -2,7 +2,6 @@
  * @author Roman Decker
  * Open sourced with permission from innovation.rocks consulting gmbh
  **/
-
 'use strict';
 
 const cafs = require('../index.js');
