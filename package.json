@@ -1,6 +1,6 @@
 {
   "name": "cafs",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A content-addressed file system with various back-ends",
   "main": "index.js",
   "scripts": {
