@@ -24,7 +24,7 @@ describe('MemoryStore', function() {
   describe('#put', function() {
     it('should store files in memory', function() {
       return cfs
-        .put(new Buffer('This should be stored under /tmp'))
+        .put(Buffer.from('This should be stored under /tmp'))
         .then(info => cfs.readFile(info))
         .then(function(buf) {
           expect(buf.toString('utf-8')).to.equal('This should be stored under /tmp');

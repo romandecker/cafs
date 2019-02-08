@@ -31,7 +31,7 @@ describe('DirectoryStore', function() {
   describe('#put', function() {
     it('should work with a temporary path with a different root', function() {
       return cfs
-        .put(new Buffer('This should be stored under /tmp'))
+        .put(Buffer.from('This should be stored under /tmp'))
         .then(info => cfs.readFile(info))
         .then(function(buf) {
           expect(buf.toString('utf-8')).to.equal('This should be stored under /tmp');

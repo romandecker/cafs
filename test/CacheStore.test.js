@@ -135,7 +135,7 @@ describe('CacheStore', function() {
   describe('#put', function() {
     it('should work put files in cache and fallback store', function() {
       return cachedFs
-        .put(new Buffer('This should be stored under /tmp'))
+        .put(Buffer.from('This should be stored under /tmp'))
         .bind({})
         .tap(function() {
           expect(directoryStore.ensure).to.have.been.calledOnce;
@@ -164,19 +164,19 @@ describe('CacheStore', function() {
       let cs = _.repeat('c', 40);
 
       return cachedFs
-        .put(new Buffer(as))
+        .put(Buffer.from(as))
         .bind({})
         .then(function(info) {
           this.aInfo = info;
           expect(memoryStore.unlink).to.not.have.been.called;
 
-          return cachedFs.put(new Buffer(bs));
+          return cachedFs.put(Buffer.from(bs));
         })
         .then(function(info) {
           this.bInfo = info;
           expect(memoryStore.unlink).to.not.have.been.called;
 
-          return cachedFs.put(new Buffer(cs));
+          return cachedFs.put(Buffer.from(cs));
         })
         .then(function(info) {
           this.cInfo = info;

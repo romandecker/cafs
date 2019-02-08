@@ -57,9 +57,9 @@ describe('cafs', function() {
 
       describe('#put', function() {
         it('should work with buffers', function() {
-          return expect(cfs.hasContent(new Buffer('hello, world!'), { ext: '.txt' }))
+          return expect(cfs.hasContent(Buffer.from('hello, world!'), { ext: '.txt' }))
             .to.eventually.equal(false)
-            .then(() => cfs.put(new Buffer('hello, world!'), { ext: '.txt' }))
+            .then(() => cfs.put(Buffer.from('hello, world!'), { ext: '.txt' }))
             .then(function(info) {
               expect(info.meta).to.have.property('ext', '.txt');
               expect(info).to.have.property('size', 13);
@@ -69,7 +69,7 @@ describe('cafs', function() {
                 expect(cfs.has(info)).to.eventually.equal(true),
                 expect(cfs.has(info.key)).to.eventually.equal(true),
                 expect(
-                  cfs.hasContent(new Buffer('hello, world!'), { ext: '.txt' })
+                  cfs.hasContent(Buffer.from('hello, world!'), { ext: '.txt' })
                 ).to.eventually.equal(true)
               );
             })
@@ -102,7 +102,7 @@ describe('cafs', function() {
 
         it('should correctly handle files with same content', function() {
           return cfs
-            .put(new Buffer('hello, world!'), { ext: '.txt' })
+            .put(Buffer.from('hello, world!'), { ext: '.txt' })
             .bind({})
             .then(function(info1) {
               this.info1 = info1;
@@ -113,7 +113,7 @@ describe('cafs', function() {
             .then(function(buf) {
               expect(buf.toString('utf-8')).to.equal('hello, world!');
 
-              return cfs.put(new Buffer('hello, world!'), { ext: '.txt' });
+              return cfs.put(Buffer.from('hello, world!'), { ext: '.txt' });
             })
             .then(function(info2) {
               this.info2 = info2;
@@ -150,7 +150,7 @@ describe('cafs', function() {
       describe('#unlink', function() {
         it('should remove a file', function() {
           return cfs
-            .put(new Buffer('hello, world!'), 'hello.txt')
+            .put(Buffer.from('hello, world!'), 'hello.txt')
             .bind({})
             .then(function(info) {
               this.info = info;
