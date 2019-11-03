@@ -20,7 +20,7 @@
     "errors": "^0.3.0",
     "fs-extra": "^8.1.0",
     "hash-stream": "^1.2.0",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.13",
     "lru-cache": "^5.1.1",
     "memory-fs": "^0.4.1",
     "mock-fs": "^4.10.1",
